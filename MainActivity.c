@@ -1,43 +1,43 @@
-#include "src/main/cpp/com/cmcc/bdmsgserver/bdmsgauth/BDMsgAuthSdk.h"
-#include "src/main/cpp/com/cmcc/bdmsgserver/util/BDMsgDataUtil.h"
-#include "src/main/cpp/com/cmcc/bdmsgserver/util/BDMsgLogUtil.h"
-#include "src/main/cpp/com/cmcc/bdmsgserver/smcrypt/cCalculate/BDMsgSMCryptManager.h"
+#include "./bdmsgauth/BDMsgAuthSdk.h"
+#include "./util/BDMsgDataUtil.h"
+#include "./util/BDMsgLogUtil.h"
+#include "./smcrypt/cCalculate/BDMsgSMCryptManager.h"
 
 void printBDMsgMailReplyResponse(BDMsgMailReplyResponse *response);
 
 //测试入口界面
 int main() {
 
-//    //待加密的数据
-//    char *plainText = "泛终端加密测试";
-//
-//    uint8_t *plainTextBytes = BDMsgDataUtil_Utf8StrToGBKBytes(plainText);
-//    int dataLength = strlen((const char *) plainTextBytes);
-//
-//    BDMsgLogUtil_printInfo("原始数据:", plainText);
-//
-//    char *hexdata = BDMsgDataUtil_ByteArrayToHexStr(BDMsgDataUtil_Utf8StrToGBKBytes(plainText), dataLength);
-//    BDMsgLogUtil_printInfo("hexdata", hexdata);
-//
-//    const char *key_hex_str = "891C400E5A577922A2740750422F98F13F6EB10369DEB628E9FB585F72FFEEF1";
-//    size_t key_len;
-//
-//    // 转换十六进制字符串为字节数组
-//    unsigned char *keyAndIv = BDMsgDataUtil_HexStrToByteArray(key_hex_str, &key_len);
-//    if (!keyAndIv) {
-//        return 1;
-//    }
-//
-//    //使用需要鉴权码的加密方法
-//    BDMsgSMCryptResponse encryptResponse = encryptBdMsgNeedVerifyCode(
-//            keyAndIv, key_len, plainTextBytes, dataLength
-//    );
-//    //打印长度
-//    char buffer[20];
-//    snprintf(buffer, sizeof(buffer), "%d", encryptResponse.len);
-//    //打印内容
-//    char *encryptedHex = BDMsgDataUtil_ByteArrayToHexStr(encryptResponse.data, encryptResponse.len / 8);
-//    BDMsgLogUtil_printInfo("加密后的数据(HEX): %s\n", encryptedHex);
+   //待加密的数据
+   char *plainText = "泛终端加密测试";
+
+   uint8_t *plainTextBytes = BDMsgDataUtil_Utf8StrToGBKBytes(plainText);
+   int dataLength = strlen((const char *) plainTextBytes);
+
+   BDMsgLogUtil_printInfo("原始数据:", plainText);
+
+   char *hexdata = BDMsgDataUtil_ByteArrayToHexStr(BDMsgDataUtil_Utf8StrToGBKBytes(plainText), dataLength);
+   BDMsgLogUtil_printInfo("hexdata", hexdata);
+
+   const char *key_hex_str = "891C400E5A577922A2740750422F98F13F6EB10369DEB628E9FB585F72FFEEF1";
+   size_t key_len;
+
+   // 转换十六进制字符串为字节数组
+   unsigned char *keyAndIv = BDMsgDataUtil_HexStrToByteArray(key_hex_str, &key_len);
+   if (!keyAndIv) {
+       return 1;
+   }
+
+   //使用需要鉴权码的加密方法
+   BDMsgSMCryptResponse encryptResponse = encryptBdMsgNeedVerifyCode(
+           keyAndIv, key_len, plainTextBytes, dataLength
+   );
+   //打印长度
+   char buffer[20];
+   snprintf(buffer, sizeof(buffer), "%d", encryptResponse.len);
+   //打印内容
+   char *encryptedHex = BDMsgDataUtil_ByteArrayToHexStr(encryptResponse.data, encryptResponse.len / 8);
+   BDMsgLogUtil_printInfo("加密后的数据(HEX): %s\n", encryptedHex);
 
 
 //    //解密
