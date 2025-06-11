@@ -1,0 +1,52 @@
+(base) root@DESKTOP-3PDF16V:/mnt/c/Users/happy/Desktop/bdmsgserver# tree .
+.
+├── bdmsgauth
+│   ├── BDMsgAuthSdk.c
+│   ├── BDMsgAuthSdk.h
+│   └── model
+│       ├── BDMsgBaseData.c
+│       ├── BDMsgBaseData.h
+│       ├── BDMsgGenericCommonData.c
+│       ├── BDMsgGenericCommonData.h
+│       ├── BDMsgGenericPositionData.c
+│       ├── BDMsgGenericPositionData.h
+│       ├── BDMsgMailReplyResponse.c
+│       ├── BDMsgMailReplyResponse.h
+│       ├── BDMsgMailboxData.c
+│       ├── BDMsgMailboxData.h
+│       ├── BDMsgSMCryptResponse.c
+│       └── BDMsgSMCryptResponse.h
+├── common
+│   ├── CompressIndicatorEnum.c
+│   ├── CompressIndicatorEnum.h
+│   ├── MsgResultCodeEnum.c
+│   ├── MsgResultCodeEnum.h
+│   ├── MsgTypeEnum.c
+│   └── MsgTypeEnum.h
+├── smcrypt
+│   ├── cCalculate
+│   │   ├── BDMsgSMCryptManager.c
+│   │   ├── BDMsgSMCryptManager.h
+│   │   ├── calculate_jni.c
+│   │   ├── calculate_jni.h
+│   │   ├── calculation_result.c
+│   │   └── calculation_result.h
+│   └── calculatejni
+│       ├── calculation.c
+│       ├── calculation.h
+│       ├── endian_custom.h
+│       ├── sm3.c
+│       ├── sm3.h
+│       ├── sm4.c
+│       └── sm4.h
+└── util
+    ├── BDMsgBitSetUtils.c
+    ├── BDMsgBitSetUtils.h
+    ├── BDMsgDataUtil.c
+    ├── BDMsgDataUtil.h
+    ├── BDMsgLogUtil.c
+    ├── BDMsgLogUtil.h
+    ├── BytesVector.c
+    ├── BytesVector.h
+    ├── StringList.c
+    └── StringList.h
